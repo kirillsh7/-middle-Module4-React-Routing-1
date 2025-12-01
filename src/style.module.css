@@ -1,0 +1,172 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Стили для верхней навигационной панели */
+.topNav {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #00b4d8;
+}
+
+.header {
+  padding: 2rem 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #00b4d8, #90e0ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.navCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.navCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #00b4d8;
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
+}
+
+.navIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.navTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.navDescription {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.main {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.welcome {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.welcomeTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.welcomeText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #90e0ef;
+}
+
+.featureText {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .topNav {
+    padding: 1rem;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navCard {
+    width: 100%;
+    max-width: 300px;
+  }
+}
