@@ -8,17 +8,13 @@ export const ItemDetail = () => {
 	const { categoryId, itemId } = useParams()
 	const [loading, setLoading] = useState(true)
 	const [item, setItem] = useState(null)
-	const [items, setItems] = useState([])
 	const navigate = useNavigate()
 
 	useEffect(() => {
 
-		get(categoryId)
+		get(`${categoryId}/${itemId}`)
 			.then(res => {
-				setItems(res.results)
-
-				const currentItem = res.results.find(item => item.id === Number(itemId))
-				setItem(currentItem)
+				setItem(res)
 				setLoading(false)
 			})
 			.catch(error => {
@@ -46,7 +42,6 @@ export const ItemDetail = () => {
 
 	const config = detailConfigs[categoryId]
 	const currentConfig = config(item)
-	const currentIndex = items.findIndex(i => i.id === item.id)
 
 	return (
 		<div className="item-detail-page" style={{ '--accent-color': currentConfig.accentColor }}>
@@ -129,7 +124,7 @@ export const ItemDetail = () => {
 				</div>
 			</div>
 
-			<div className="related-navigation">
+			{/* <div className="related-navigation">
 				<div className="nav-buttons">
 					{currentIndex > 0 && (
 						<Link
@@ -155,7 +150,7 @@ export const ItemDetail = () => {
 						</Link>
 					)}
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }
