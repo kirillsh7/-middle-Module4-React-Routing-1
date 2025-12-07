@@ -1,30 +1,41 @@
+import { Component, ProtectedRoute, ErrorBoundary } from '../../components'
 import { Routes, Route } from 'react-router-dom'
 import { Home } from '../../pages'
-import { CategoryList, ItemDetail } from '../../components'
 import { AppLayout } from '../../layouts'
-import { Login } from '../../pages/Login/Login'
-import { ProtectedRoute } from '../../components'
+
+const Element = ({ name, url }) => {
+	return <ProtectedRoute>
+		<ErrorBoundary>
+			<Component key={name} name={name} url={url} />
+		</ErrorBoundary>
+	</ProtectedRoute>
+}
+
 export const AppRouter = () => {
 	return <Routes>
 		<Route element={<AppLayout />}>
 			<Route path="/" element={<Home />} />
-			<Route path="/category"  >
-				<Route path=':categoryId' >
-					<Route index element={
-						<ProtectedRoute>
-							<CategoryList />
-						</ProtectedRoute>
-					}
-					/>
-					<Route path=':itemId' element={
-						<ProtectedRoute>
-							<ItemDetail />
-						</ProtectedRoute>
-					}
-					/>
-				</Route>
+
+			<Route path="/category/:categoryId"  >
+
+				<Route index element={
+					<ProtectedRoute>
+						<Element name='CategoryList' url='../../components/common/CategoryList/ChategoryList.jsx' />
+					</ProtectedRoute>
+				}
+				/>
+				<Route path=':itemId' element={
+					<Element name='ItemDetail' url='../../components/common/ItemDetail/ItemDetail.jsx' />
+				}
+				/>
+
 			</Route>
-			<Route path="/login" element={<Login />} />
+			<Route path="/login" element={
+				<ErrorBoundary>
+					<Component name='Login' url='../../pages/Login/Login.jsx' />
+				</ErrorBoundary>
+			} />
+
 			<Route path="*" element={
 				<h1 style={{
 					textAlign: 'center',
@@ -34,5 +45,3 @@ export const AppRouter = () => {
 		</Route>
 	</Routes>
 }
-
-

@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
+import { Suspense } from 'react'
 import { useAuth } from '../../context'
 import styles from '../../style.module.css'
 export const AppLayout = () => {
@@ -14,7 +15,9 @@ export const AppLayout = () => {
 
 				</div>
 			</nav>
-			<Outlet />
+			<Suspense fallback={<div>Loading...</div>}>
+				<Outlet />
+			</Suspense>
 		</div>
 	)
 

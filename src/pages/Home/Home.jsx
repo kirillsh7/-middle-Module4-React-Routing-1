@@ -10,19 +10,19 @@ export const Home = () => {
           <p className={styles.subtitle}>Исследуйте мультивселенную вместе с нами</p>
 
           <nav className={styles.nav}>
-            <Link to="/category/characters" className={styles.navCard}>
+            <Link to="/category/character" className={styles.navCard}>
               <div className={styles.navIcon}>👨‍🚀</div>
               <h2 className={styles.navTitle}>Герои</h2>
               <p className={styles.navDescription}>Все персонажи мультсериала</p>
             </Link>
 
-            <Link to="/category/locations" className={styles.navCard}>
+            <Link to="/category/location" className={styles.navCard}>
               <div className={styles.navIcon}>🌌</div>
               <h2 className={styles.navTitle}>Локации</h2>
               <p className={styles.navDescription}>Планеты и измерения</p>
             </Link>
 
-            <Link to="/category/episodes" className={styles.navCard}>
+            <Link to="/category/episode" className={styles.navCard}>
               <div className={styles.navIcon}>📺</div>
               <h2 className={styles.navTitle}>Эпизоды</h2>
               <p className={styles.navDescription}>Все серии и сезоны</p>
