@@ -20,19 +20,19 @@ export const AppRouter = () => {
 
 				<Route index element={
 					<ProtectedRoute>
-						<Element name='CategoryList' url='../../components/common/CategoryList/ChategoryList.jsx' />
+						<Element name='CategoryList' url='../../../components/common/CategoryList/ChategoryList.jsx' />
 					</ProtectedRoute>
 				}
 				/>
 				<Route path=':itemId' element={
-					<Element name='ItemDetail' url='../../components/common/ItemDetail/ItemDetail.jsx' />
+					<Element name='ItemDetail' url='../../../components/common/ItemDetail/ItemDetail.jsx' />
 				}
 				/>
 
 			</Route>
 			<Route path="/login" element={
 				<ErrorBoundary>
-					<Component name='Login' url='../../pages/Login/Login.jsx' />
+					<Component name='Login' url='../../../pages/Login/Login.jsx' />
 				</ErrorBoundary>
 			} />
 
